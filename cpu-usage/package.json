@@ -1,0 +1,18 @@
+{
+  "name": "cpu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "child_process_demo.js",
+  "scripts": {
+    "check": "node --cpu-prof ./demo.js",
+    "check:child_process": "node --cpu-prof ./child_process_demo.js",
+    "check:cluster": "node --cpu-prof ./cluster_demo.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "os-utils": "0.0.14",
+    "pidusage": "^3.0.0"
+  }
+}
