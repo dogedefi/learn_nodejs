@@ -1,5 +1,6 @@
 const cluster = require("cluster");
 const pidusage = require("pidusage");
+const heapdump = require("heapdump");
 
 module.exports = (callback) => {
   if (cluster.isMaster) {
@@ -39,6 +40,7 @@ module.exports = (callback) => {
 
     worker.on("exit", () => {
       clearInterval(intervalid);
+      heapdump.writeSnapshot();
     });
   } else {
     callback();
